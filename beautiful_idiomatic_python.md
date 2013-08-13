@@ -645,7 +645,7 @@ def redirect_stdout(fileobj):
         sys.stdout = oldstdout
 ```
 
-# Concise Expressive One-Liners
+## Concise Expressive One-Liners
 Two conflicting rules:
 
  * Don’t put too much on one line
