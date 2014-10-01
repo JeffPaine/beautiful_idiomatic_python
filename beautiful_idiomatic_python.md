@@ -496,10 +496,10 @@ names.popleft()
 names.appendleft('mark')
 ```
 ## Decorators and Context Managers
- * Helps separate business logic from administra:ve logic
- * Clean, beau:ful tools for factoring code and improving code reuse
- * Good naming is essen:al.
- * Remember the Spiderman rule: With great power, comes great respsonsibility!
+ * Helps separate business logic from administrative logic
+ * Clean, beautiful tools for factoring code and improving code reuse
+ * Good naming is essential.
+ * Remember the Spiderman rule: With great power, comes great responsibility!
 
 ## Using decorators to factor-out administrative logic
 
