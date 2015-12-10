@@ -20,7 +20,7 @@ for i in range(6):
 for i in xrange(6):
     print i**2
 ```
-`xrange` creates an iterator over the range producing the values one at a time. This approach is much more memory efficient than `range`. `xrange` was renamed `range` in python 3.
+`xrange` creates an iterator over the range producing the values one at a time. This approach is much more memory efficient than `range`. `xrange` was renamed to `range` in python 3.
 
 ## Looping over a collection
 
@@ -95,6 +95,7 @@ for name, color in izip(names, colors):
 ```
 
 `zip` creates a new list in memory and takes more memory. `izip` is more efficient than `zip`.
+Note: `izip` was renamed to `zip` in python 3.
 
 ## Looping in sorted order
 
@@ -198,6 +199,7 @@ When should you use the second and not the first? When you're mutating the dicti
 > If you mutate something while you're iterating over it, you're living in a state of sin and deserve what ever happens to you.
 
 `d.keys()` makes a copy of all the keys and stores them in a list. Then you can modify the dictionary.
+Note: in python 3 you have to write `list(d.keys())` because `d.keys()` returns a "dictionary view". See [documentation](https://docs.python.org/3/library/stdtypes.html#dict-views).
 
 ## Looping over dicitonary keys and values
 
@@ -219,7 +221,8 @@ for k, v in d.iteritems():
 ```
 
 `iteritems()` is better as it returns an iterator.
-
+Note: in python 3 there is no `iteritems()` and `items()` behaviour is close to what `iteritems()` did. See [documentation](https://docs.python.org/3/library/stdtypes.html#dict-views).
+ 
 ## Construct a dictionary from pairs
 
 ```python
@@ -229,6 +232,7 @@ colors = ['red', 'green', 'blue']
 d = dict(izip(names, colors))
 # {'matthew': 'blue', 'rachel': 'green', 'raymond': 'red'}
 ```
+For python 3: `d = dict(zip(names, colors))`
 
 ## Counting with dictionaries
 
@@ -520,6 +524,8 @@ def web_lookup(url):
     return urllib.urlopen(url).read()
 ```
 
+Note since python 3.2 there is a decorator for this in the standard library: `functools.lru_cache`.
+
 ## Factor-out temporary contexts
 
 ```python
@@ -595,6 +601,7 @@ with ignored(OSError):
 ```
 
 `ignored` is is new in python 3.4, [documentation](http://docs.python.org/dev/library/contextlib.html#contextlib.ignored).
+Note: `ignored` is actually called `suppress` in the standard library.
 
 To make your own `ignored` context manager in the meantime:
 
