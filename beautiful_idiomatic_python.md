@@ -95,7 +95,7 @@ for name, color in izip(names, colors):
 ```
 
 `zip` creates a new list in memory and takes more memory. `izip` is more efficient than `zip`.
-Note: `izip` was renamed to `zip` in python 3.
+Note: in python 3 `izip` was renamed to `zip` and promoted to a builtin replacing the old `zip`.
 
 ## Looping in sorted order
 
@@ -199,7 +199,7 @@ When should you use the second and not the first? When you're mutating the dicti
 > If you mutate something while you're iterating over it, you're living in a state of sin and deserve what ever happens to you.
 
 `d.keys()` makes a copy of all the keys and stores them in a list. Then you can modify the dictionary.
-Note: in python 3 you have to write `list(d.keys())` because `d.keys()` returns a "dictionary view". See [documentation](https://docs.python.org/3/library/stdtypes.html#dict-views).
+Note: in python 3 to iterate through a dictionary you have to explicidly write: `list(d.keys())` because `d.keys()` returns a "dictionary view" (an iterable that provide a dynamic view on the dictionary’s keys). See [documentation](https://docs.python.org/3/library/stdtypes.html#dict-views).
 
 ## Looping over dicitonary keys and values
 
@@ -221,7 +221,7 @@ for k, v in d.iteritems():
 ```
 
 `iteritems()` is better as it returns an iterator.
-Note: in python 3 there is no `iteritems()` and `items()` behaviour is close to what `iteritems()` did. See [documentation](https://docs.python.org/3/library/stdtypes.html#dict-views).
+Note: in python 3 there is no `iteritems()` and `items()` behaviour is close to what `iteritems()` had. See [documentation](https://docs.python.org/3/library/stdtypes.html#dict-views).
  
 ## Construct a dictionary from pairs
 
@@ -524,7 +524,7 @@ def web_lookup(url):
     return urllib.urlopen(url).read()
 ```
 
-Note since python 3.2 there is a decorator for this in the standard library: `functools.lru_cache`.
+Note: since python 3.2 there is a decorator for this in the standard library: `functools.lru_cache`.
 
 ## Factor-out temporary contexts
 
