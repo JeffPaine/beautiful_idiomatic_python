@@ -181,7 +181,7 @@ def find(seq, target):
 
 Inside of every `for` loop is an `else`.
 
-## Looping over dicitonary keys
+## Looping over dictionary keys
 
 ```python
 d = {'matthew': 'blue', 'rachel': 'green', 'raymond': 'red'}
@@ -201,7 +201,7 @@ When should you use the second and not the first? When you're mutating the dicti
 `d.keys()` makes a copy of all the keys and stores them in a list. Then you can modify the dictionary.
 Note: in python 3 to iterate through a dictionary you have to explicidly write: `list(d.keys())` because `d.keys()` returns a "dictionary view" (an iterable that provide a dynamic view on the dictionary’s keys). See [documentation](https://docs.python.org/3/library/stdtypes.html#dict-views).
 
-## Looping over dicitonary keys and values
+## Looping over dictionary keys and values
 
 ```python
 # Not very fast, has to re-hash every key and do a lookup
@@ -509,7 +509,8 @@ names.appendleft('mark')
 
 ```python
 # Mixes business / administrative logic and is not reusable
-def web_lookup(url, saved={}): if url in saved:
+def web_lookup(url, saved={}):
+    if url in saved:
         return saved[url]
     page = urllib.urlopen(url).read()
     saved[url] = page
