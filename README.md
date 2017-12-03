@@ -199,7 +199,7 @@ When should you use the second and not the first? When you're mutating the dicti
 > If you mutate something while you're iterating over it, you're living in a state of sin and deserve what ever happens to you.
 
 `d.keys()` makes a copy of all the keys and stores them in a list. Then you can modify the dictionary.
-Note: in python 3 to iterate through a dictionary you have to explicidly write: `list(d.keys())` because `d.keys()` returns a "dictionary view" (an iterable that provide a dynamic view on the dictionary’s keys). See [documentation](https://docs.python.org/3/library/stdtypes.html#dict-views).
+Note: in python 3 to iterate through a dictionary you have to explicitly write: `list(d.keys())` because `d.keys()` returns a "dictionary view" (an iterable that provide a dynamic view on the dictionary’s keys). See [documentation](https://docs.python.org/3/library/stdtypes.html#dict-views).
 
 ## Looping over dictionary keys and values
 
