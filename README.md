@@ -434,6 +434,9 @@ The second approach is more high-level, doesn't risk getting the order wrong and
 ```python
 tmp_x = x + dx * t
 tmp_y = y + dy * t
+# NOTE: The "influence" function here is just an example function, what it does 
+# is not important. The important part is how to manage updating multiple 
+# variables at once.
 tmp_dx = influence(m, x, y, dx, dy, partial='x')
 tmp_dy = influence(m, x, y, dx, dy, partial='y')
 x = tmp_x
@@ -445,6 +448,9 @@ dy = tmp_dy
 ### Better
 
 ```python
+# NOTE: The "influence" function here is just an example function, what it does 
+# is not important. The important part is how to manage updating multiple 
+# variables at once.
 x, y, dx, dy = (x + dx * t,
                 y + dy * t,
                 influence(m, x, y, dx, dy, partial='x'),
