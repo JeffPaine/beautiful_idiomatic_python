@@ -258,9 +258,9 @@ for color in colors:
 
 # Slightly more modern but has several caveats, better for advanced users
 # who understand the intricacies
-d = defaultdict(int)
+d = collections.defaultdict(int)
 for color in colors:
-d[color] += 1
+    d[color] += 1
 ```
 
 ## Grouping with dictionaries -- Part I and II
@@ -288,7 +288,7 @@ for name in names:
 ### Better
 
 ```python
-d = defaultdict(list)
+d = collections.defaultdict(list)
 for name in names:
     key = len(name)
     d[key].append(name)
