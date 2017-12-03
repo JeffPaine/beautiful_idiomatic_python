@@ -491,10 +491,10 @@ names.insert(0, 'mark')
 ### Better
 
 ```python
-names = deque(['raymond', 'rachel', 'matthew', 'roger',
+names = collections.deque(['raymond', 'rachel', 'matthew', 'roger',
                'betty', 'melissa', 'judith', 'charlie'])
 
-# More efficient with deque
+# More efficient with collections.deque
 del names[0]
 names.popleft()
 names.appendleft('mark')
