@@ -648,7 +648,7 @@ def redirect_stdout(fileobj):
     oldstdout = sys.stdout
     sys.stdout = fileobj
     try:
-        yield fieldobj
+        yield fileobj
     finally:
         sys.stdout = oldstdout
 ```
