@@ -531,7 +531,7 @@ def web_lookup(url):
     return urllib.urlopen(url).read()
 ```
 
-Note: since python 3.2 there is a decorator for this in the standard library: `functools.lru_cache`.
+Note: since python 3.2 there is a decorator for this in the [standard library](https://docs.python.org/3/library/functools.html): [`functools.lru_cache`](https://pypi.python.org/pypi/backports.functools_lru_cache/1.2.1).
 
 ## Factor-out temporary contexts
 
