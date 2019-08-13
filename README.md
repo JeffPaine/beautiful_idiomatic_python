@@ -104,11 +104,11 @@ colors = ['red', 'green', 'blue', 'yellow']
 
 # Forward sorted order
 for color in sorted(colors):
-    print colors
+    print color
 
 # Backwards sorted order
 for color in sorted(colors, reverse=True):
-    print colors
+    print color
 ```
 
 ## Custom Sort Order
@@ -364,17 +364,18 @@ doctest.testmod()
 ### Better
 
 ```python
-# New testmod return value, a namedTuple
+# New testmod return value, a named tuple
 doctest.testmod()
 # TestResults(failed=0, attempted=4)
 ```
 
-A namedTuple is a subclass of tuple so they still work like a regular tuple, but are more friendly.
+A named tuple is a subclass of tuple so they still work like a regular tuple, but are more friendly.
 
-To make a namedTuple:
+To make a named tuple, call namedtuple factory function in collections module:
 
 ```python
-TestResults = namedTuple('TestResults', ['failed', 'attempted'])
+from collections import namedtuple
+TestResults = namedtuple('TestResults', ['failed', 'attempted'])
 ```
 
 ## Unpacking sequences
